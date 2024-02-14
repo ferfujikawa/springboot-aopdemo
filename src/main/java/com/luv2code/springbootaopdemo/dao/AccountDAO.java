@@ -1,8 +1,14 @@
 package com.luv2code.springbootaopdemo.dao;
 
+import java.util.List;
+
 import com.luv2code.springbootaopdemo.Account;
 
 public interface AccountDAO {
+
+    // add a new method: findAccounts()
+
+    List<Account> findAccounts();
 
     void addAccount(Account theAccount, boolean vipFlag);
 
