@@ -32,6 +32,24 @@ public class MyDemoLoggingAspect {
         // print out the results of the method call
         System.out.println("\n=====>>> result is: " + result);
 
+        // let's post-process the data ... let's modify it :-)
+
+        // convert the account names to uppercase
+        convertAccoutNamesToUpperCase(result);
+
+    }
+
+    private void convertAccoutNamesToUpperCase(List<Account> result) {
+        
+        // loop through accounts
+        for (Account tempAccount : result) {
+         
+            // get uppercase version of name
+            String theUppercaseName = tempAccount.getName().toUpperCase();
+
+            //update the name on the account
+            tempAccount.setName(theUppercaseName);
+        }
     }
 
     @Before("com.luv2code.springbootaopdemo.aspect.LuvAopExpressions.forDaoPackageNoGetterSetter()")
