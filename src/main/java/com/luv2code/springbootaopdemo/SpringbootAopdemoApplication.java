@@ -31,9 +31,24 @@ public class SpringbootAopdemoApplication {
 			// demoTheAfterThrowingAdvice(theAccountDAO);
 			// demoTheAfterAdviceAdvice(theAccountDAO);
 			// demoTheAroundAdvice(theTrafficFortuneService);
+			// demoTheArountAdviceHandleException(theTrafficFortuneService);
 
-			demoTheArountAdviceHandleException(theTrafficFortuneService);
+			demoTheAroundAdviceRethrowException(theTrafficFortuneService);
 		};
+	}
+
+	private void demoTheAroundAdviceRethrowException(TrafficFortuneService theTrafficFortuneService) {
+		
+		System.out.println("\nMain Program: demoTheAroundAdviceRethrowException");
+
+		System.out.println("Calling getFurtune()");
+
+		boolean tripWire = true;
+		String data = theTrafficFortuneService.getFortune(tripWire);
+
+		System.out.println("\nMy fortune is: " + data);
+
+		System.out.println("Finished");
 	}
 
 	private void demoTheArountAdviceHandleException(TrafficFortuneService theTrafficFortuneService) {
